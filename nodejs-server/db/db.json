@@ -1,0 +1,20 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "text": "Hello world"
+    },
+    {
+      "id": 2,
+      "text": "lowdb is awesome"
+    },
+    {
+      "id": 3,
+      "text": "Bond man"
+    },
+    {
+      "id": 4,
+      "text": "XYZ"
+    }
+  ]
+}

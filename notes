@@ -1,0 +1,6 @@
+From browser, visit swagger editor
+Create yaml and generate nodejs-server 
+
+http://localhost:8081/docs - swagger ui
+http://localhost:8081/v2/notes 
+http://localhost:8081/v2/notes/2

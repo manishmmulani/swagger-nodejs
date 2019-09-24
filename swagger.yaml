@@ -1,0 +1,89 @@
+---
+swagger: "2.0"
+info:
+  description: "This is a sample Notes server"
+  version: "1.0.0"
+  title: "Swagger Notes Server"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "apiteam@swagger.io"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "localhost:8081"
+basePath: "/v2"
+tags:
+- name: "notes"
+  description: "Everything about your Notes"
+  externalDocs:
+    description: "Find out more"
+    url: "http://swagger.io"
+- name: "user"
+  description: "Operations about user"
+  externalDocs:
+    description: "Find out more about our users"
+    url: "http://swagger.io"
+schemes:
+- "http"
+paths:
+  /notes:
+    get:
+      tags:
+      - "notes"
+      summary: "Get all Notes"
+      description: ""
+      operationId: "getAllNotes"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "All notes"
+      x-swagger-router-controller: "Notes"
+    post:
+      tags:
+      - "notes"
+      summary: "Add a note"
+      description: ""
+      operationId: "createNote"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - in : body
+          name : body
+          required : true
+          schema:
+            $ref: "#/definitions/Note"
+      responses:
+        200:
+          description: "Created Note"
+      x-swagger-router-controller: "Notes"
+  /notes/{id}:
+    get:
+      tags:
+      - "notes"
+      summary: "Get note by id"
+      description: ""
+      operationId: "getNoteById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: id
+        in: path
+        required: true
+        type: integer
+      responses:
+        200:
+          description: "Note for a given id"
+      x-swagger-router-controller: "Notes"
+definitions:
+  Note:
+    type: "object"
+    required : 
+    - "text"
+    properties :
+      text:
+        type: string
+        example: Hello world
